@@ -1,0 +1,29 @@
+{
+  "appId": "com.example.mymealz",
+  "appName": "MyMealz",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "CapacitorSQLite": {
+      "iosDatabaseLocation": "Library/CapacitorDatabase",
+      "iosIsEncryption": false,
+      "iosKeychainPrefix": "MyMealz",
+      "iosBiometric": {
+        "biometricAuth": false,
+        "biometricTitle": "Biometric login for MyMealz"
+      },
+      "androidIsEncryption": false,
+      "androidBiometric": {
+        "biometricAuth": false,
+        "biometricTitle": "Biometric login for MyMealz",
+        "biometricSubTitle": "Log in using your biometric"
+      },
+      "electronIsEncryption": false,
+      "electronWindowsLocation": "C:\\ProgramData\\CapacitorDatabases",
+      "electronMacLocation": "Databases",
+      "electronLinuxLocation": "Databases"
+    }
+  }
+}
