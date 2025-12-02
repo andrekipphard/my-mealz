@@ -1,34 +1,35 @@
-
 # MyMealz – TODO & Roadmap
-
 
 ## Phase 1 – MVP
 
 - [x] Projektstruktur & Basis einrichten
-	- Projektstruktur, Linting, Prettier, SCSS, SQLite-Integration, Home Screen, Basis-Komponenten.
-- [ ] Rezepte CRUD aufteilen
-	- Rezepte-Feature in kleine, saubere Teilaufgaben zerlegen und strukturieren.
-- [ ] Recipe Type anlegen
-	- TypeScript-Typen für Rezepte in src/types/recipe.ts definieren.
-- [ ] Recipe Component erstellen
-	- Vue-Komponente Recipe.vue für die Anzeige/Bearbeitung eines Rezepts anlegen.
-- [ ] Recipe Styles anlegen
-	- SCSS-Datei recipe.scss für die Rezept-Komponente erstellen und einbinden.
-- [ ] Composables für Rezepte
-	- Composables wie useRecipe.ts für Logik (z.B. Laden, Speichern, Löschen) anlegen.
-- [ ] Rezepte-Übersicht (Liste)
-	- Komponente für die Anzeige aller Rezepte (RecipeList.vue) erstellen.
-- [ ] Rezepte-Formular
-	- Komponente für das Erstellen/Bearbeiten eines Rezepts (RecipeForm.vue) erstellen.
+  - Projektstruktur, Linting, Prettier, SCSS, SQLite-Integration, Home Screen, Basis-Komponenten.
+- [x] Rezepte CRUD aufteilen
+  - Rezepte-Feature in kleine, saubere Teilaufgaben zerlegen und strukturieren.
+- [x] Recipe Type anlegen
+  - TypeScript-Typen für Rezepte in src/types/recipe.ts definieren.
+- [x] Recipe Component erstellen
+  - Vue-Komponente Recipe.vue für die Anzeige/Bearbeitung eines Rezepts anlegen.
+- [x] Recipe Styles anlegen
+  - SCSS-Datei recipe.scss für die Rezept-Komponente erstellen und einbinden.
+- [x] Composables für Rezepte
+  - Composables wie useRecipe.ts für Logik (z.B. Laden, Speichern, Löschen) anlegen.
+- [x] Rezepte-Übersicht (Liste)
+  - Komponente für die Anzeige aller Rezepte (RecipeList.vue) erstellen.
+- [x] Rezepte-Formular
+  - Komponente für das Erstellen/Bearbeiten eines Rezepts (RecipeForm.vue) erstellen.
+- [x] Edit Rezept
+  - Bei Klick auf Edit Button innerhalb des Rezepts wird RecipeForm.vue geöffnet. Hier können alle Daten des Rezepts geändert und gespeichert werden.
+- [x] Add Rezept
+  - Bei Klick auf Add Button (wo weiß ich noch nicht) wird RecipeForm.vue geöffnet. Hier können alle Daten für das Rezept eingetragen und gespeichert werden. Anschließend wird es der RecipeList.vue hinzugefügt. (Kann ich hier einfach RecipeForm.vue reusen?)
 - [ ] Rezepte-API/Service anbinden
-	- Service/Composables mit Datenbank verbinden (CRUD-Methoden nutzen).
+  - Service/Composables mit Datenbank verbinden (CRUD-Methoden nutzen).
 
 - [ ] Kategorien, Tags, Favoriten
 - [ ] Random-Button
 - [ ] "Lange nicht gekocht"-Logik
 - [ ] Virtueller Kühlschrank (Zutaten, Mengen, Haltbarkeit)
 - [ ] Vorschläge basierend auf vorhandenen Zutaten
-
 
 ## Phase 2 – Komfort & Features
 

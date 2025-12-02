@@ -2,7 +2,6 @@ import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection } from '@capacito
 import type {
   Recipe,
   Ingredient,
-  RecipeIngredient,
   FridgeItem,
   ShoppingItem,
   CookingHistory,
