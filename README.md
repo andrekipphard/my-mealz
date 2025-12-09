@@ -1,62 +1,67 @@
 # MyMealz
 
-MyMealz ist eine hybride App (Vue 3 + Vite + Capacitor), die dir hilft, deine Rezepte, deinen virtuellen Kühlschrank und deine Essensplanung zu organisieren.
+
+MyMealz is a modern recipe and kitchen management app (Vue 3 + Vite + Express + SQLite). You can manage your recipes, virtual fridge, and meal planning in one place.
+
 
 ## Features (MVP)
 
-- Rezepte anlegen, bearbeiten, löschen
-- Kategorien, Tags, Favoriten
-- Random-Rezept-Vorschlag
-- "Lange nicht gekocht"-Logik
-- Lokale Speicherung (SQLite, offlinefähig)
-- Virtueller Kühlschrank: Zutaten, Mengen, Haltbarkeit
-- Vorschläge basierend auf vorhandenen Zutaten
+- Create, edit, and delete recipes
+- Categories, tags, favorites
+- Random recipe suggestion
+- "Not cooked for a long time" logic
+- Local database (SQLite via Express backend)
+- Virtual fridge: ingredients, quantities, shelf life
+- Suggestions based on available ingredients
 
-## Geplante Erweiterungen
 
-- Barcode-Scanner (Kamera)
-- Push-Notifications (z.B. Haltbarkeit läuft ab)
-- Einkaufsliste
-- Cloud-Sync & Benutzerkonten
+## Planned Extensions
 
-## Tech-Stack
+- Barcode scanner (camera)
+- Push notifications (e.g. shelf life expiring)
+- Shopping list
+- Cloud sync & user accounts
+
+
+## Tech Stack
 
 - [Vue 3](https://vuejs.org/) + [Vite](https://vitejs.dev/)
-- [Capacitor](https://capacitorjs.com/) (iOS/Android)
-- [@capacitor-community/sqlite](https://github.com/capacitor-community/sqlite)
+- [Express.js](https://expressjs.com/) backend (Node.js)
+- [SQLite](https://www.sqlite.org/) database (backend/mymealz.db)
+- [Axios](https://axios-http.com/) for API calls
 - TypeScript
 
-## Entwicklung
 
-1. Projekt initialisieren:
+## Development
+
+1. Install all dependencies:
    ```sh
    npm install
    ```
-2. Entwicklung im Browser:
+2. Start both backend (Express/SQLite) and frontend (Vite) together:
    ```sh
-   npm run dev
+   npm run dev:full
    ```
-3. Capacitor Plattformen synchronisieren:
-   ```sh
-   npm run build
-   npx cap sync
-   ```
-4. App auf Gerät starten (z.B. Android):
-   ```sh
-   npx cap run android -l --external
-   ```
+   - The backend runs on http://localhost:3001
+   - The frontend runs on http://localhost:5173
+3. The frontend communicates with the backend via REST API (see `src/services/api.ts`).
 
-## Datenmodell
+**No direct SQLite usage in the frontend anymore!**
 
-Siehe `src/types/index.ts` für alle Interfaces.
 
-## Datenbank
+## Data Model
 
-Initialisierung und Beispiel-Daten siehe `src/services/database.ts`.
+See `src/types/index.ts` for all interfaces.
+
+
+## Database
+
+The SQLite database is located at `backend/mymealz.db` and is managed by the Express backend. You can inspect it with any SQLite client.
+
 
 ## Roadmap
 
-Siehe TODO.md für geplante Features und Phasen.
+See TODO.md for planned features and phases.
 
 ---
 

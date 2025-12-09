@@ -22,7 +22,7 @@
   - Bei Klick auf Edit Button innerhalb des Rezepts wird RecipeForm.vue geöffnet. Hier können alle Daten des Rezepts geändert und gespeichert werden.
 - [x] Add Rezept
   - Bei Klick auf Add Button (wo weiß ich noch nicht) wird RecipeForm.vue geöffnet. Hier können alle Daten für das Rezept eingetragen und gespeichert werden. Anschließend wird es der RecipeList.vue hinzugefügt. (Kann ich hier einfach RecipeForm.vue reusen?)
-- [ ] Rezepte-API/Service anbinden
+- [x] Rezepte-API/Service anbinden
   - Service/Composables mit Datenbank verbinden (CRUD-Methoden nutzen).
 
 - [ ] Kategorien, Tags, Favoriten

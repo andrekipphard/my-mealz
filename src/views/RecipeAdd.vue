@@ -6,9 +6,8 @@ import RecipeForm from '@/components/RecipeForm/RecipeForm.vue';
 const router = useRouter();
 const { addRecipe } = useRecipe();
 
-function handleSave(newRecipe) {
-  const id = Date.now();
-  addRecipe({ ...newRecipe, id });
+async function handleSave(newRecipe) {
+  const id = await addRecipe(newRecipe);
   router.push(`/recipes/${id}`);
 }
 function handleClose() {
@@ -18,7 +17,7 @@ function handleClose() {
 
 <template>
   <div class="recipe-add-view">
-    <h1>Rezept anlegen</h1>
+    <h1>Add Recipe</h1>
     <RecipeForm @save="handleSave" @close="handleClose" />
   </div>
 </template>

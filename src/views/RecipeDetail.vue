@@ -8,13 +8,17 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { computed } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRecipe } from '@/composables/useRecipe';
 import Recipe from '@/components/Recipe/Recipe.vue';
 
 const route = useRoute();
 const { getRecipeById } = useRecipe();
-const recipe = computed(() => getRecipeById(Number(route.params.id)));
+const recipe = ref(null);
+
+onMounted(async () => {
+  recipe.value = await getRecipeById(Number(route.params.id));
+});
 </script>
 
 <style scoped>

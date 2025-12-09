@@ -22,9 +22,9 @@ function handleClose() {
 
 <template>
   <div class="recipe-edit-view">
-    <h1>Rezept bearbeiten</h1>
+    <h1>Edit Recipe</h1>
     <RecipeForm v-if="recipe" :recipe="recipe" @save="handleSave" @close="handleClose" />
-    <div v-else>Rezept nicht gefunden.</div>
+    <div v-else>Recipe not found.</div>
   </div>
 </template>
 

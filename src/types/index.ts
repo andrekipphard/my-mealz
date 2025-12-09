@@ -1,28 +1,14 @@
-// Basis-Interface für alle Entitäten mit ID
+import type { Recipe } from './recipe';
+
 export interface BaseEntity {
   id?: number;
   created_at?: Date;
   updated_at?: Date;
 }
 
-// Rezept Interface
-export interface Recipe extends BaseEntity {
-  name: string;
-  description?: string;
-  instructions: string;
-  prep_time?: number; // in Minuten
-  cook_time?: number; // in Minuten
-  servings?: number;
-  difficulty?: 'easy' | 'medium' | 'hard';
-  category?: string;
-  tags?: string[];
-  image_url?: string;
-  last_cooked?: Date;
-  favorite?: boolean;
-  rating?: number; // 1-5
-}
 
-// Zutat Interface
+export * from './recipe';
+
 export interface Ingredient extends BaseEntity {
   name: string;
   brand?: string;
@@ -31,7 +17,6 @@ export interface Ingredient extends BaseEntity {
   default_unit?: string;
 }
 
-// Rezept-Zutat Verbindung
 export interface RecipeIngredient extends BaseEntity {
   recipe_id: number;
   ingredient_id: number;
@@ -40,7 +25,6 @@ export interface RecipeIngredient extends BaseEntity {
   optional?: boolean;
 }
 
-// Kühlschrank-Item (was du tatsächlich zu Hause hast)
 export interface FridgeItem extends BaseEntity {
   ingredient_id: number;
   amount: number;
@@ -53,7 +37,6 @@ export interface FridgeItem extends BaseEntity {
   notes?: string;
 }
 
-// Einkaufsliste
 export interface ShoppingItem extends BaseEntity {
   ingredient_id: number;
   amount: number;
@@ -63,7 +46,6 @@ export interface ShoppingItem extends BaseEntity {
   notes?: string;
 }
 
-// Kochhistorie
 export interface CookingHistory extends BaseEntity {
   recipe_id: number;
   cooked_at: Date;
@@ -72,7 +54,6 @@ export interface CookingHistory extends BaseEntity {
   served_portions?: number;
 }
 
-// Nährwertangaben (optional für später)
 export interface Nutrition extends BaseEntity {
   ingredient_id: number;
   calories_per_100g?: number;
@@ -83,7 +64,6 @@ export interface Nutrition extends BaseEntity {
   sugar_per_100g?: number;
 }
 
-// Recipe Suggestion Interface für die Vorschlagslogik
 export interface RecipeSuggestion {
   recipe: Recipe;
   score: number;
@@ -101,7 +81,6 @@ export type SuggestionReason =
   | 'high_rated'
   | 'random';
 
-// Database Query Optionen
 export interface QueryOptions {
   limit?: number;
   offset?: number;
@@ -110,7 +89,6 @@ export interface QueryOptions {
   where?: Record<string, any>;
 }
 
-// API Response Interface
 export interface ApiResponse<T> {
   success: boolean;
   data?: T;
@@ -118,7 +96,6 @@ export interface ApiResponse<T> {
   message?: string;
 }
 
-// App Settings
 export interface AppSettings extends BaseEntity {
   key: string;
   value: string;

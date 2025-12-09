@@ -16,7 +16,7 @@ describe('useRecipe composable', () => {
 
   beforeEach(() => {
     recipeApi = useRecipe();
-    recipeApi.setRecipes([]); // reset state
+    recipeApi.setRecipes([]);
   });
 
 
@@ -26,17 +26,19 @@ describe('useRecipe composable', () => {
     expect(recipeApi.recipes.value[0].name).toBe('Test Recipe');
   });
 
-  it('gets all recipes with getRecipes', () => {
-    recipeApi.addRecipe(sampleRecipe);
-    const all = recipeApi.getRecipes();
+
+  it('gets all recipes with getRecipes', async () => {
+    await recipeApi.addRecipe(sampleRecipe);
+    const all = await recipeApi.getRecipes();
     expect(Array.isArray(all)).toBe(true);
     expect(all.length).toBe(1);
     expect(all[0].id).toBe(sampleRecipe.id);
   });
 
-  it('gets a recipe by id', () => {
-    recipeApi.addRecipe(sampleRecipe);
-    const found = recipeApi.getRecipeById(1);
+
+  it('gets a recipe by id', async () => {
+    await recipeApi.addRecipe(sampleRecipe);
+    const found = await recipeApi.getRecipeById(1);
     expect(found).not.toBeNull();
     expect(found?.name).toBe('Test Recipe');
   });

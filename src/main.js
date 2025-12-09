@@ -1,3 +1,6 @@
+// Jeep-SQLite für Web initialisieren
+import { defineCustomElements as jeepSqlite } from 'jeep-sqlite/loader';
+jeepSqlite(window);
 import './assets/main.scss';
 
 import { createApp } from 'vue';

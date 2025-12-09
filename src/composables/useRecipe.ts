@@ -1,39 +1,49 @@
 import { ref } from 'vue';
 import type { Recipe } from '@/types/recipe';
+import { api } from '@/services/api';
 
-// Dummy state for now, will be replaced with DB logic
 const recipes = ref<Recipe[]>([]);
+const isLoaded = ref(false);
+
+async function loadRecipes() {
+  recipes.value = await api.getAllRecipes();
+  isLoaded.value = true;
+}
 
 export function useRecipe() {
-  // Get all recipes
-  function getRecipes() {
+  if (!isLoaded.value) {
+    loadRecipes();
+  }
+
+  async function getRecipes() {
+    if (!isLoaded.value) await loadRecipes();
     return recipes.value;
   }
 
-  // Get recipe by id
-  function getRecipeById(id: number) {
-    return recipes.value.find((r) => r.id === id) || null;
+
+  async function getRecipeById(id: number) {
+    return await api.getRecipeById(id);
   }
 
-  // Add a new recipe
-  function addRecipe(recipe: Recipe) {
-    recipes.value.push(recipe);
+
+  async function addRecipe(recipe: Omit<Recipe, 'id' | 'created_at' | 'updated_at'>) {
+    const newRecipe = await api.addRecipe(recipe);
+    await loadRecipes();
+    return newRecipe.id;
   }
 
-  // Update a recipe
-  function updateRecipe(updated: Recipe) {
-    const idx = recipes.value.findIndex((r) => r.id === updated.id);
-    if (idx !== -1) recipes.value[idx] = updated;
+
+  async function updateRecipe(recipe: Recipe) {
+    await api.updateRecipe(recipe);
+    await loadRecipes();
   }
 
-  // Delete a recipe with confirmation
-  function deleteRecipe(id: number) {
-    if (window.confirm('Do you really want to delete this recipe?')) {
-      recipes.value = recipes.value.filter((r) => r.id !== id);
-    }
+
+  async function deleteRecipe(id: number) {
+    await api.deleteRecipe(id);
+    await loadRecipes();
   }
 
-  // For testing: set all recipes
   function setRecipes(newRecipes: Recipe[]) {
     recipes.value = newRecipes;
   }
@@ -46,5 +56,6 @@ export function useRecipe() {
     updateRecipe,
     deleteRecipe,
     setRecipes,
+    loadRecipes,
   };
 }

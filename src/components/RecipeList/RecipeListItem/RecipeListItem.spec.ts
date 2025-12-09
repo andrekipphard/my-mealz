@@ -3,7 +3,6 @@
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 import type { Recipe } from '@/types/recipe';
 
-// Mock useRecipe BEFORE importing the component
 const deleteRecipeMock = vi.fn();
 vi.mock('@/composables/useRecipe', () => ({
   useRecipe: () => ({ deleteRecipe: deleteRecipeMock })
@@ -62,7 +61,6 @@ describe('RecipeListItem.vue', () => {
         stubs: { 'router-link': { template: '<a><slot /></a>' } },
       },
     });
-    // Find the button with text 'View' inside the stub
     const viewBtn = wrapper.find('button');
     expect(viewBtn.exists()).toBe(true);
     expect(viewBtn.text()).toContain('View');

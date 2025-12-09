@@ -47,7 +47,6 @@ describe('RecipeForm', () => {
 
   it('emits close when cancel is clicked', async () => {
     const wrapper = mount(RecipeForm);
-    // Find the Cancel button by its text content
     const cancelButton = wrapper.findAll('button[type="button"]').find(btn => btn.text() === 'Cancel');
     expect(cancelButton).toBeTruthy();
     await cancelButton!.trigger('click');

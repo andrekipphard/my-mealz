@@ -13,7 +13,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "dev:full": "concurrently \"npm run --prefix backend dev\" \"npm run dev\""
   },
   "dependencies": {
     "@capacitor-community/sqlite": "^7.0.2",
@@ -22,6 +23,7 @@
     "@capacitor/core": "^7.4.4",
     "@capacitor/ios": "^7.4.4",
     "@vueuse/core": "^14.0.0",
+    "axios": "^1.13.2",
     "lucide-vue-next": "^0.554.0",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"
@@ -47,6 +49,7 @@
     "vite": "^7.1.11",
     "vite-plugin-vue-devtools": "^8.0.3",
     "vitest": "^4.0.15",
-    "vue-eslint-parser": "^10.2.0"
+    "vue-eslint-parser": "^10.2.0",
+    "concurrently": "^8.2.2"
   }
 }

@@ -2,16 +2,15 @@
   <div class="home-view-container">
     <h1>MyMealz</h1>
     <p>
-      Willkommen! Verwalte deine Rezepte, deinen virtuellen Kühlschrank und lass dich inspirieren,
-      was du als nächstes kochen könntest.
+      Welcome! Manage your recipes, your virtual fridge, and get inspired for what to cook next.
     </p>
     <ul>
-      <li>Rezepte speichern & suchen</li>
-      <li>Vorschläge & Zufallsauswahl</li>
-      <li>Virtueller Kühlschrank</li>
-      <li>Einkaufsliste & Haltbarkeit</li>
+      <li>Save & search recipes</li>
+      <li>Suggestions & random picks</li>
+      <li>Virtual fridge</li>
+      <li>Shopping list & shelf life</li>
     </ul>
-    <router-link to="/playground" class="playground-link">Komponenten-Playground</router-link>
+    <router-link to="/playground" class="playground-link">Component Playground</router-link>
   </div>
 </template>
 

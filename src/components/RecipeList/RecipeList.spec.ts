@@ -5,7 +5,6 @@ import RecipeList from './RecipeList.vue';
 import { testRecipes } from '@/mocks/recipes';
 import { useRecipe } from '@/composables/useRecipe';
 
-// Set up test data before each test
 beforeEach(() => {
   const { setRecipes } = useRecipe();
   setRecipes(testRecipes);
@@ -35,7 +34,6 @@ describe('RecipeList.vue', () => {
   });
 
   it('removes recipe from list when delete event is emitted', async () => {
-    // window.confirm mocken, damit deleteRecipe wirklich löscht
     window.confirm = () => true;
     const wrapper = mount(RecipeList, {
       global: {
@@ -43,7 +41,6 @@ describe('RecipeList.vue', () => {
       },
     });
     const initialCount = wrapper.findAll('.recipe-list__item').length;
-    // Finde das erste RecipeListItem und löse das delete-Event aus
     const firstItem = wrapper.findComponent({ name: 'RecipeListItem' });
     await firstItem.vm.$emit('delete', testRecipes[0].id);
     await wrapper.vm.$nextTick();
