@@ -24,15 +24,21 @@
   - Bei Klick auf Add Button (wo weiß ich noch nicht) wird RecipeForm.vue geöffnet. Hier können alle Daten für das Rezept eingetragen und gespeichert werden. Anschließend wird es der RecipeList.vue hinzugefügt. (Kann ich hier einfach RecipeForm.vue reusen?)
 - [x] Rezepte-API/Service anbinden
   - Service/Composables mit Datenbank verbinden (CRUD-Methoden nutzen).
-
+- [ ] Build Home View with navigation and teasers for main areas (Recipe List, Add Recipe, etc.)
+  - Desktop: Sidebar navigation on the left
+  - Mobile: Bottom navigation or burger menu
+  - Use Vue Router for navigation between views
+  - Responsive design for all screen sizes
+  - Teaser cards/buttons for each main feature (only Recipe List and Add Recipe for now)
 - [ ] Kategorien, Tags, Favoriten
-- [ ] Random-Button
-- [ ] "Lange nicht gekocht"-Logik
-- [ ] Virtueller Kühlschrank (Zutaten, Mengen, Haltbarkeit)
-- [ ] Vorschläge basierend auf vorhandenen Zutaten
+- [ ] Random-Button, welcher ein Rezept zum kochen vorschlägt
+
 
 ## Phase 2 – Komfort & Features
 
+- [ ] "Lange nicht gekocht"-Logik
+- [ ] Virtueller Kühlschrank (Zutaten, Mengen, Haltbarkeit)
+- [ ] Vorschläge basierend auf vorhandenen Zutaten
 - [ ] Einkaufsliste
 - [ ] Zutaten-Barcode-Scanner (Kamera)
 - [ ] Push-Notifications (z.B. Haltbarkeit läuft ab)
