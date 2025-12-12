@@ -2,7 +2,7 @@ import { ref } from 'vue';
 import type { Recipe } from '@/types/recipe';
 import { api } from '@/services/api';
 
-const recipes = ref<Recipe[]>([]);
+export const recipes = ref<Recipe[]>([]);
 const isLoaded = ref(false);
 
 async function loadRecipes() {
